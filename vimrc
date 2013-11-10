@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
 
+
 "Bundle 'gmarik/vundle'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
@@ -14,12 +15,17 @@ set rtp+=~/.vim/bundle/vundle/
 "Bundle 'tpope/vim-fugitive'
 filetype plugin indent on
 "##############################################################################################################"
-set nu
-syntax on
+set nu "display all columns on the text or code 
+syntax on "enable vim to change highlight color 
 set nocompatible 
 filetype plugin on
-set confirm " 當程式起衝突，就以明確文字來提示
-set cursorline "顯示目前的游標位置
+set confirm 
+set cursorline
+"###############################################Folding Setting################################################"
+set foldmarker={{{,}}}
+set foldmethod=marker
+set foldnestmax=3
+"##############################################################################################################"
 set t_Co=256
 set autoindent
 set cindent
@@ -28,12 +34,15 @@ set encoding=utf-8
 set ruler
 set fileencodings=ucs-bom,utf-8,big5,gbk,latin1 
 set path+=/usr/share/include/glib/
-set mouse=a
+	if has("mouse")
+		set mouse=a
+	endif
 "set ttymouse=xterm2
 set showmatch
+set wildmenu
 set smartindent
 set completeopt=longest,menu
-
+set mps+=<:>
 
 let Tlist_Ctags_Cmd="/usr/local/Cellar/ctags/5.8/bin/ctags"
 let Tlist_Exit_OnlyWindow=1
@@ -64,6 +73,7 @@ let g:SuperTabDefaultCompletionType="context"
 imap <tab> <C-X><C-O>
 map <C-p> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 noremap <silent> <C-a> :NERDTree<CR>
+noremap <Space> za "Press <Space> equivalent of command "za"
 nmap <silent> <leader> t <ESC> :OmniTagsLoad /Users/darren/tagsCllect/tags<CR>
 
 "nnoremap <silent> <F5> :NERDTree<CR>
