@@ -73,7 +73,8 @@ let g:SuperTabDefaultCompletionType="context"
 imap <tab> <C-X><C-O>
 map <C-p> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 noremap <silent> <C-a> :NERDTree<CR>
-noremap <Space> za "Press <Space> equivalent of command "za"
+noremap <Space> za 
+"Press <Space> equivalent of command "za"
 nmap <silent> <leader> t <ESC> :OmniTagsLoad /Users/darren/tagsCllect/tags<CR>
 
 "nnoremap <silent> <F5> :NERDTree<CR>
